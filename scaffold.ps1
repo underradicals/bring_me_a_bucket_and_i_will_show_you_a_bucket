@@ -1,8 +1,3 @@
-# Change to your base working directory if needed
-$root = "D2App"
-New-Item -ItemType Directory -Path $root -Force
-Set-Location $root
-
 # Create solution
 dotnet new sln -n D2App
 
