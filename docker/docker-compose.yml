@@ -1,0 +1,36 @@
+version: '3.9'
+
+services:
+  redis:
+    image: redis:latest
+    container_name: d2app-redis
+    ports:
+      - "6380:6379"  # Map container's 6379 to host's 6380 to avoid WSL conflict
+    volumes:
+      - redis-data:/data
+    restart: unless-stopped
+    networks:
+      - d2app-net
+
+  postgres:
+    image: postgres:16
+    container_name: d2app-postgres
+    environment:
+      POSTGRES_USER: d2app_user
+      POSTGRES_PASSWORD: d2app_pass
+      POSTGRES_DB: d2app_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    restart: unless-stopped
+    networks:
+      - d2app-net
+
+volumes:
+  redis-data:
+  postgres-data:
+
+networks:
+  d2app-net:
+    driver: bridge
