@@ -1,3 +1,13 @@
+bin/
+obj/
+.vscode/
+*.db
+*.db-shm
+*.db-wal
+data/
+assets/
+*.zip
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
