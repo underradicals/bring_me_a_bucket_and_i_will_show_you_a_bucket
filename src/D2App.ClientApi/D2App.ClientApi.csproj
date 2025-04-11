@@ -13,6 +13,7 @@
   <ItemGroup>
     <ProjectReference Include="..\D2App.Application\D2App.Application.csproj" />
     <ProjectReference Include="..\D2App.Shared\D2App.Shared.csproj" />
+    <ProjectReference Include="..\D2App.Infrastructure\D2App.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>
