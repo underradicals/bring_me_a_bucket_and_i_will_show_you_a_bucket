@@ -78,6 +78,7 @@ foreach ($proj in $projects) {
 # Add project references
 dotnet add src/D2App.ClientApi/D2App.ClientApi.csproj reference `
     src/D2App.Application/D2App.Application.csproj `
+    src/D2App.Infrastructure/D2App.Infrastructure.csproj `
     src/D2App.Shared/D2App.Shared.csproj
 
 dotnet add src/D2App.Application/D2App.Application.csproj reference `
