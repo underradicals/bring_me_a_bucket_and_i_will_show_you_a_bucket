@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  seq:
+    image: datalust/seq:latest
+    container_name: d2app-seq
+    restart: unless-stopped
+    ports:
+      - "5341:5341"       # HTTP UI/API
+      - "8081:80"     # Ingesting logs from applications
+    environment:
+      - ACCEPT_EULA=Y   # Required to accept Seq's license
+      - SEQ_FIRSTRUN_ADMINPASSWORD=paswsword
+    volumes:
+      - seq-data:/data  # Persist Seq data
+
+volumes:
+  seq-data:
